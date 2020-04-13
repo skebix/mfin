@@ -26,7 +26,14 @@ def compara_futuros(spot, curva_ars, curva_usd, fx_futures):
         teorico = fx_future(spot, data['plazo'], curva_ars, curva_usd)
         diff = (mercado - teorico) * 100 / mercado
         action = "Vender" if mercado > teorico else "Comprar"
-        print(f'{ticker} -> Mkt: {mercado} / Mod: {teorico} -> Dif: {diff} -> {action}')
+        message = (
+            f"{ticker} -> "
+            f"Mkt: {mercado:.4f} / "
+            f"Mod: {teorico:.4f} -> "
+            f"Dif: {diff:.2f}% -> "
+            f"{action}"
+        )
+        print(message)
 
 
 def fx_future(spot, plazo, curva_ars, curva_usd):
@@ -49,10 +56,18 @@ def pretty_print_fwd(fwd_struct):
 if __name__ == '__main__':
     import json
     data = json.load(open('data/c4_mkt_data.json'))
+
     curva_ars = crea_curva(data['letras']['ARS'])
-    tfars = estructura_tasas_fwd(curva_ars)
-    pretty_print_fwd(tfars)
+    forward_structure_ars_curve = estructura_tasas_fwd(curva_ars)
+    print('Forward Structure ARS Curve')
+    pretty_print_fwd(forward_structure_ars_curve)
+    print()
+
     curva_usd = crea_curva(data['letras']['USD'])
-    tfusd = estructura_tasas_fwd(curva_usd)
-    pretty_print_fwd(tfusd)
+    forward_structure_usd_curve = estructura_tasas_fwd(curva_usd)
+    print('Forward Structure USD Curve')
+    pretty_print_fwd(forward_structure_usd_curve)
+    print()
+
+    print('FX Futures Arbitrage')
     compara_futuros(data['fx_spot'], curva_ars, curva_usd, data['fx_futures'])
