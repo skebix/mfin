@@ -13,15 +13,11 @@ def tasa_fwd(plazo_larga, valor_larga, plazo_corta, valor_corta):
 
 
 def estructura_tasas_fwd(curva):
-    cantidad_periodos = len(curva)
-    tasas_forward = {}
-    for i in range(0, cantidad_periodos - 1):
-        plazo_c, tasa_c = curva[i]
-        tasa_forward = {round(plazo_larga * 365 - plazo_c * 365):
-                        tasa_fwd(plazo_larga, tasa_larga, plazo_c, tasa_c)
-                        for plazo_larga, tasa_larga in curva[i+1:]}
-        tasas_forward[round(plazo_c * 365)] = tasa_forward
-    return tasas_forward
+    return {round(curva[i][0] * 365):
+            {round(plazo_larga * 365 - curva[i][0] * 365):
+            tasa_fwd(plazo_larga, tasa_larga, curva[i][0], curva[i][1])
+            for plazo_larga, tasa_larga in curva[i+1:]}
+            for i in range(0, len(curva) - 1)}
 
 
 def pretty_print_fwd(fwd_struct):
@@ -41,4 +37,3 @@ if __name__ == '__main__':
     curva_ars = crea_curva(data['letras']['ARS'])
     tf = estructura_tasas_fwd(curva_ars)
     pretty_print_fwd(tf)
-    print('cualquiera')
