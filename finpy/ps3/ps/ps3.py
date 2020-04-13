@@ -16,13 +16,11 @@ def estructura_tasas_fwd(curva):
     cantidad_periodos = len(curva)
     tasas_forward = {}
     for i in range(0, cantidad_periodos - 1):
-        tasa_forward = {}
-        plazo_corta, tasa_corta = curva[i]
-        for plazo_larga, tasa_larga in curva[i+1:]:
-            diferencia_plazos = plazo_larga * 365 - plazo_corta * 365
-            tasa_forward[diferencia_plazos] = tasa_fwd(plazo_larga, tasa_larga,
-                                                       plazo_corta, tasa_corta)
-        tasas_forward[plazo_corta * 365] = tasa_forward
+        plazo_c, tasa_c = curva[i]
+        tasa_forward = {round(plazo_larga * 365 - plazo_c * 365):
+                        tasa_fwd(plazo_larga, tasa_larga, plazo_c, tasa_c)
+                        for plazo_larga, tasa_larga in curva[i+1:]}
+        tasas_forward[round(plazo_c * 365)] = tasa_forward
     return tasas_forward
 
 
