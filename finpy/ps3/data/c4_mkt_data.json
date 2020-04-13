@@ -1,0 +1,43 @@
+{
+	"letras" : {
+
+		"ARS" : {
+          "S12A9" : { "precio" : 111.6500, "capital" : 113.6123, "plazo" :  14 },
+          "S30A9" : { "precio" : 123.4000, "capital" : 128.3647, "plazo" :  32 },
+          "S10Y9" : { "precio" : 101.9300, "capital" : 107.7482, "plazo" :  42 },
+          "S31Y9" : { "precio" : 118.9300, "capital" : 129.3948, "plazo" :  63 },
+          "S28J9" : { "precio" : 109.4000, "capital" : 122.9255, "plazo" :  91 },
+          "S30S9" : { "precio" : 120.5000, "capital" : 151.7697, "plazo" : 185 },
+          "S31O9" : { "precio" : 115.3700, "capital" : 150.4700, "plazo" : 216 },
+          "S28F0" : { "precio" :  94.5000, "capital" : 137.5876, "plazo" : 336 },
+          "S30A0" : { "precio" : 113.6000, "capital" : 170.2433, "plazo" : 398 },
+          "S31L0" : { "precio" :  99.0000, "capital" : 160.1257, "plazo" : 490 }
+		},
+
+		"USD" : {
+          "U12A9" : { "precio" : 99.8650, "capital" : 100.0000, "plazo" :  14 },
+          "U26A9" : { "precio" : 99.8031, "capital" : 100.0000, "plazo" :  28 },
+          "U10Y9" : { "precio" : 99.6450, "capital" : 100.0000, "plazo" :  42 },
+          "U24Y9" : { "precio" : 99.3900, "capital" : 100.0000, "plazo" :  56 },
+          "U14J9" : { "precio" : 99.2576, "capital" : 100.0000, "plazo" :  77 },
+          "U28J9" : { "precio" : 99.0970, "capital" : 100.0000, "plazo" :  91 },
+          "U26L9" : { "precio" : 98.9329, "capital" : 100.0000, "plazo" : 119 },
+          "U16G9" : { "precio" : 98.4930, "capital" : 100.0000, "plazo" : 140 },
+          "U30G9" : { "precio" : 98.3812, "capital" : 100.0000, "plazo" : 154 },
+          "U13S9" : { "precio" : 98.3700, "capital" : 100.0000, "plazo" : 168 },
+          "U27S9" : { "precio" : 97.9136, "capital" : 100.0000, "plazo" : 182 },
+          "U11O9" : { "precio" : 97.9287, "capital" : 100.0000, "plazo" : 196 }
+		}
+	},
+
+	"fx_spot" : 43.32,
+
+	"fx_futures" : {
+          "RA19" : { "precio" : 45.1500, "plazo" :  32 },
+          "RY19" : { "precio" : 46.9700, "plazo" :  63 },
+          "RJ19" : { "precio" : 48.7000, "plazo" :  91 },
+          "RL19" : { "precio" : 50.6500, "plazo" : 124 },
+          "RG19" : { "precio" : 52.4000, "plazo" : 154 },
+          "RS19" : { "precio" : 54.1000, "plazo" : 185 }
+	}
+}
