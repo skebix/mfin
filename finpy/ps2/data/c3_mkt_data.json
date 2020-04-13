@@ -1,0 +1,26 @@
+{
+    "mercado" : {
+		"S29M9" : { "precio" : 122.0400, "capital" : 123.1152, "plazo" :   7 },
+		"S12A9" : { "precio" : 110.8070, "capital" : 113.6123, "plazo" :  21 },
+		"S30A9" : { "precio" : 122.8000, "capital" : 128.3647, "plazo" :  39 },
+		"S10Y9" : { "precio" : 101.5950, "capital" : 107.7482, "plazo" :  49 },
+		"S31Y9" : { "precio" : 118.8500, "capital" : 129.3948, "plazo" :  70 },
+		"S28J9" : { "precio" : 109.4000, "capital" : 122.9255, "plazo" :  98 },
+		"S30S9" : { "precio" : 121.2000, "capital" : 151.7697, "plazo" : 192 },
+		"S31O9" : { "precio" : 118.0500, "capital" : 150.4700, "plazo" : 223 },
+		"S28F0" : { "precio" :  96.2500, "capital" : 137.5876, "plazo" : 343 },
+		"S30A0" : { "precio" : 113.6000, "capital" : 170.2433, "plazo" : 405 },
+		"S31L0" : { "precio" :  99.0000, "capital" : 160.1257, "plazo" : 497 }
+    },
+
+    "portfolio" : {
+		"S30A9" : 0.20,
+		"S10Y9" : 0.05,
+		"S31Y9" : 0.1,
+		"S28J9" : 0.15,
+		"S30S9" : 0.2,
+		"S28F0" : 0.1,
+		"S30A0" : 0.15,
+		"S31L0" : 0.05
+    }
+}
