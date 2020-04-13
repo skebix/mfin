@@ -3,7 +3,7 @@
 Problem Set 3
 """
 
-from finpylib.yield_curves import crea_curva
+from finpylib.yield_curves import crea_curva, interpola_tasa
 
 
 def tasa_fwd(plazo_larga, valor_larga, plazo_corta, valor_corta):
@@ -18,6 +18,12 @@ def estructura_tasas_fwd(curva):
             tasa_fwd(plazo_larga, tasa_larga, curva[i][0], curva[i][1])
             for plazo_larga, tasa_larga in curva[i+1:]}
             for i in range(0, len(curva) - 1)}
+
+
+def fx_future(spot, plazo, curva_ars, curva_usd):
+    tasa_ars = 1 + interpola_tasa(curva_ars, plazo / 365)
+    tasa_usd = 1 + interpola_tasa(curva_usd, plazo / 365)
+    return spot * (tasa_ars / tasa_usd) ** (plazo / 365)
 
 
 def pretty_print_fwd(fwd_struct):
