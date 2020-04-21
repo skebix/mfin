@@ -34,18 +34,18 @@ class VanillaOption(EuroDerivative):
 
 class Call(VanillaOption):
     def __init__(self, strike):
-        pass
+        super().__init__('Call', strike)
 
     def payoff(self, terminal_price):
-        pass
+        return max(terminal_price - self._VanillaOption__strike, 0)
 
 
 class Put(VanillaOption):
     def __init__(self, strike):
-        pass
+        super().__init__('Put', strike)
 
     def payoff(self, terminal_price):
-        pass
+        return max(self._VanillaOption__strike - terminal_price, 0)
 
 
 def sim_gbm(s0, drift, sigma, plazo):
@@ -60,3 +60,11 @@ def sim_gbm(s0, drift, sigma, plazo):
     st = s0 * exp((drift - .5 * sigma * sigma) * (plazo / 365.) +
                   sigma * sqrt(plazo / 365.) * gauss(0., 1.))
     return st
+
+
+if __name__ == '__main__':
+
+    c = Call(10)
+    print(c.payoff(28))
+    p = Put(15)
+    print(p.payoff(17))
