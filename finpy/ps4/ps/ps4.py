@@ -8,23 +8,43 @@ from random import gauss
 
 
 class EuroDerivative:
-    pass
+    def get_price(self, s0, rfr, volatilidad, plazo, simulaciones, seed=None):
+        pass
+
+    def plot_payoff(self, min, max):
+        pass
 
 
 class Strategy(EuroDerivative):
-    pass
+    def __init__(self, name):
+        pass
+
+    def __repr__(self):
+        pass
 
 
 class VanillaOption(EuroDerivative):
-    pass
+    def __init__(self, type, strike):
+        pass
+
+    def __repr__(self):
+        pass
 
 
 class Call(VanillaOption):
-    pass
+    def __init__(self, strike):
+        pass
+
+    def payoff(self, terminal_price):
+        pass
 
 
 class Put(VanillaOption):
-    pass
+    def __init__(self, strike):
+        pass
+
+    def payoff(self, terminal_price):
+        pass
 
 
 def sim_gbm(s0, drift, sigma, plazo):
