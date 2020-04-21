@@ -4,7 +4,7 @@ Problem Set 4
 """
 
 from math import exp, sqrt
-from random import gauss
+from random import gauss, seed
 
 
 class EuroDerivative:
@@ -17,9 +17,15 @@ class EuroDerivative:
 
 class Strategy(EuroDerivative):
     def __init__(self, name):
-        pass
+        self.name = name
 
     def __repr__(self):
+        pass
+
+    def add_position(self, cantidad, opcion):
+        pass
+
+    def payoff(self, terminal_price):
         pass
 
 
@@ -66,5 +72,10 @@ if __name__ == '__main__':
 
     c = Call(10)
     print(c.payoff(28))
+    c.get_price(10,10,10,10,10,10)
     p = Put(15)
     print(p.payoff(17))
+
+    # Long 1 Call 10
+    # Short 2 Call 12
+    # Long 1 Call 14
