@@ -24,11 +24,12 @@ class Strategy(EuroDerivative):
 
 
 class VanillaOption(EuroDerivative):
-    def __init__(self, type, strike):
-        pass
+    def __init__(self, option_type, strike):
+        self.__type = option_type
+        self.__strike = strike
 
     def __repr__(self):
-        pass
+        return f'{self.__type} @ {self.__strike:.2f}'
 
 
 class Call(VanillaOption):
