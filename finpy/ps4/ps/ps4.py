@@ -4,12 +4,16 @@ Problem Set 4
 """
 
 from math import exp, sqrt
+from matplotlib.pyplot import plot
 from random import gauss, seed
 
 
 class EuroDerivative:
     def get_price(self, s0, rfr, volatilidad, plazo, simulaciones, sd=None):
-        pass
+        seed(sd)
+        tv = sum(self.payoff(sim_gbm(s0, rfr, volatilidad, plazo))
+                 for _ in range(simulaciones))
+        return tv * exp(-rfr * plazo / 365.0) / simulaciones
 
     def plot_payoff(self, min, max):
         pr = range(min * 2, max * 2 + 1)
