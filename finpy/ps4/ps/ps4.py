@@ -12,7 +12,8 @@ class EuroDerivative:
         pass
 
     def plot_payoff(self, min, max):
-        pass
+        pr = range(min * 2, max * 2 + 1)
+        plot([p / 2 for p in pr], [self.payoff(p / 2) for p in pr])
 
 
 class Strategy(EuroDerivative):
@@ -30,7 +31,7 @@ class Strategy(EuroDerivative):
         self.__options.append((cantidad, opcion))
 
     def payoff(self, terminal_price):
-        pass
+        return sum(q * opt.payoff(terminal_price) for q, opt in self.__options)
 
 
 class VanillaOption(EuroDerivative):
@@ -80,5 +81,6 @@ if __name__ == '__main__':
     strategy.add_position(1, Call(14))
     print(strategy)
 
+    strategy.plot_payoff(9, 15)
     # price = strategy.get_price(10, 0.05, 0.15, 180, 100000, 123)
     # print(price)
